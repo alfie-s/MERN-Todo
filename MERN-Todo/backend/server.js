@@ -22,7 +22,8 @@ app.use('/api/todos', todoRoutes)
 app.use('/api/user', userRoutes)
 
 // conect to db
-mongoose.connect('mongodb+srv://alfies:alfie@first-cluster.bqdagbk.mongodb.net/?retryWrites=true&w=majority')
+// have moved mongodb info to .env file
+mongoose.connect(process.env.MONGO_URI)
     .then(() => {
         // listen for requests from the .env file for extra security
         // source: https://www.freecodecamp.org/news/how-to-use-node-environment-variables-with-a-dotenv-file-for-node-js-and-npm/
